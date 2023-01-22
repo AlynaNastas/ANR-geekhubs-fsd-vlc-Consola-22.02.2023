@@ -1,0 +1,468 @@
+Body{
+    background-color: rgb(253, 248, 177);
+    align-items: center;
+
+}
+
+    /* 1. Voy a empezar a darle ciertas características al "padre".
+    Le he dado una posición relativa porque a continuación lo que haré será posicionar y cambiar 
+    el tamaño y forma de nuestros "hijos BOX" dentro de nuestro "padre".
+    He puesto un grid-auto x3 para que se posicionen uno al lado del otro.
+    Le he añadido el borde, un sobreado y le he dado forma a los cantos de nuetra "BOX"*/
+
+.container{
+
+    display: grid;
+    grid-template-columns: 9% auto 2% auto 9% auto;
+    position: relative;
+    height: 940px;
+    width: 525px;
+    margin: auto;
+    background-color: rgb(212, 222, 217);
+    padding: 0px;
+    border: 3px solid rgb(111, 103, 103);
+    box-shadow: 10px 10px 10px rgb(45, 44, 44);
+    border-radius: 30px 30px 120px 30px;
+}  
+
+
+/* Voy a darle forma y cuerpo a mis "cajas"*/
+
+.Box{
+    border: 3px solid rgb(109, 106, 106);
+}
+
+.box0{
+    background-color: 111, 103, 103;
+    padding: 0%;
+    width: 45px;
+    height: 60px;
+}
+
+/* En la "Box 1 y 3" hemos redondeado los cantos con border radius, ajustando así el contenido dentro
+del contenedor "padre"*/
+
+.box1{
+    border-radius: 25px 0px 0px 0px;
+}
+
+.box2{
+    background-color: 111, 103, 103;
+    width: 425px;
+}
+
+.box3{
+    border-radius: 0px 29px 0px 0px;
+}
+/* Me creo el detalle superior de la GameBoy*/
+
+.posi{
+    display:flex;
+    position: absolute;
+    top: 10px;
+    bottom: 0px;
+    right: 0px;
+    left: 70px;
+    justify-content: center;
+    background-color: rgba(198, 200, 199, 0.863);
+    color:rgba(123, 119, 119, 0.608);
+    font-size: 20px;
+    font-family: Arial;
+    padding: 2px;
+    border: 1px solid rgba(161, 157, 157, 0.243);
+    box-shadow: 0px;
+    border-radius: 90px;
+    width: 125px;
+    height: 23px;
+}
+/*Paso a construir las pantallas de la GameBoy*/
+
+.pantalla{
+    position: absolute;
+    top: 110px;
+    left: 46px;
+    background-color: dimgray;
+    width: 430px;
+    height: 320px;
+    border-radius: 10px 10px 60px 10px;
+}
+.screen{
+    box-shadow: 0px 0px 10px 0px;
+    position: absolute;
+    top: 150px;
+    left: 130px;
+    background-color: hsla(76, 54%, 55%, 0.37);;
+    width: 270px;
+    height: 245px;
+    border: 1px solid;
+}
+/* A continuación voy a crear algunos detalles relacionados con la pantalla, tales como la luz del 
+lateral de la batería, los textos respectivos y las líneas*/
+
+.boton{
+    position: absolute;
+    top: 240px;
+    left: 75px;
+    background-color: rgba(245, 11, 58, 0.249);
+    width: 15px;
+    height: 15px;
+    border-radius: 50px 50px;
+    border: 1px solid;
+}
+.boton1{
+    display: flex;
+    justify-content: center;
+    font-family: Arial;
+    color: rgba(240, 248, 255, 0.712);
+    font-size: 9px;
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    top: 269px;
+    left: 50px;
+    
+}
+
+/*Una vez creada la luz de la batería y su texto, paso a crear las 4 líneas discontinuas de la parte superior 
+de la GambeBoy*/
+.line1{
+    grid-column: 1 / 2;
+    background-color: rgba(122, 26, 63, 0.535); 
+    width: 40px;
+    height: 3px;
+    position: absolute;
+    top: 120px;
+    left: 415px;
+}
+.line2{
+    background-color:rgba(122, 26, 63, 0.535);
+    width: 170px;
+    height: 3px;
+    position: absolute;
+    top: 120px;
+    left: 70px;
+}
+.line3{
+    background-color: rgba(24, 24, 90, 0.616);
+    width: 40px;
+    height: 3px;
+    position: absolute;
+    top:130px;
+    left: 415px;
+}
+.line4{
+    background-color:rgba(24, 24, 90, 0.616);
+    width: 170px;
+    height: 3px;
+    position: absolute;
+    top: 130px;
+    left: 70px
+}
+/*En la "línea5" me he creado el segundo texto de la GameBoy, ajustandolo en medio de las líneas*/
+
+.line5{
+    display: flex;
+    justify-content:center;
+    position: absolute;
+    top: 120px;
+    left: 175px;
+    font-size:9px;
+    height: 25px;
+    width: 300px;
+    font-family: arial;
+    color: rgba(240, 248, 255, 0.601);}
+    /*A estas alturas tengo toda la parte superior con sus detalles terminada. Y procedo a crearme la parte media
+de la GameBoy*/
+
+.Nintendo{
+    width: 125px;
+    height: 30px;
+    font-family:'Gill Sans';
+    color: rgba(24, 24, 90, 0.833);
+    font-size: 32px;
+    position:absolute;
+    top:445px;
+    left: 40px;
+}
+
+.Game{
+    position: absolute;
+    top: 442px;
+    left: 165px;
+    width: 210px;
+    height: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(24, 24, 90,0.833);
+    font-size: 32px;
+    font-style:oblique;
+}
+/*Procedo a crearme los primeros botones de la GameBoy*/
+
+.cruz1{
+    background-color: rgb(0, 0, 0);
+    width: 112px;
+    height: 35px;
+    position: absolute;
+    top: 600px;
+    left: 40px;
+    border-radius: 6px;
+    box-shadow: -1px 0px 7px 0px;
+}
+.cruz2{
+    background-color: rgb(0, 0, 0);
+    width: 35px;
+    height: 112px;
+    position: absolute;
+    top: 562px;
+    left: 78px;
+    border-radius: 6px;
+    box-shadow: -1px 0px 4px 0px;
+}
+
+/*Ahora voy a crear los botones derechos en forma de círculo*/
+
+.circulo1{
+    background-color: rgba(180, 60, 102, 0.934);
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 560px;
+    left: 400px;
+    border-radius: 50px;
+    border: 1px solid rgb(74, 24, 32);
+    box-shadow: 2px 0px 4px 0px;
+}
+.circulo2{
+    background-color: rgba(180, 60, 102,0.934);
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 615px;
+    left: 320px;
+    border: 1px solid rgb(74, 24, 32);
+    border-radius: 50px;
+    box-shadow: 2px 0px 4px 0px;
+}
+.circ1{
+    height: 50px;
+    width: 45px;
+    font-size: 30px;
+    -webkit-transform: rotate(-33deg);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(21, 21, 101, 0.787);
+    position: absolute;
+    top: 620px;
+    left: 460px;
+}
+
+.circ2{
+    height: 50px;
+    width: 45px;
+    font-size: 30px;
+    -webkit-transform: rotate(-35deg);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(21, 21, 101, 0.787);
+    position: absolute;
+    top: 675px;
+    left: 385px;
+}
+/*Terminados mis botones derechos, voy a crear los botones del "select" y el "start"*/
+
+.select{
+    background-color: dimgray;
+    width: 65px;
+    height: 18px;
+    position: absolute;
+    top: 760px;
+    left: 160px;
+    border-radius: 20px;
+    border: 1px solid;
+    rotate: -25deg;
+    box-shadow: -4px 0px 9px 0px;
+}
+.start{
+    background-color: dimgray;
+    width: 65px;
+    height: 18px;
+    position: absolute;
+    top: 760px;
+    left: 240px;
+    border-radius: 20px;
+    border: 1px solid;
+    rotate: -25deg;
+    box-shadow: -4px 0px 9px 0px;
+}
+.sel{
+    width: 90px;
+    height: 40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(24, 24, 90);
+    font-size: 15px;
+    position: absolute;
+    top: 773px;
+    left: 180px;
+    rotate: -25deg;
+}
+.st{
+    width: 90px;
+    height: 40px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(24, 24, 90);
+    font-size: 15px;
+    position: absolute;
+    top: 770px;
+    left: 265px;
+    rotate: -25deg;
+}
+/*Procedo a crear las 6 líneas de la esquina derecha*/
+.first{
+    background-color: rgb(190, 192, 196);
+    width: 10px;
+    height: 100px;
+    position:absolute;
+    top:800px;
+    left: 450px;
+    border-radius: 20px;
+    border: 1px solid rgb(153, 154, 157);
+    -webkit-transform: rotate(-30deg);
+    box-shadow: -1px 0px 5px 0px ;
+}
+
+.second{
+    background-color: rgb(190, 192, 196);
+    width: 10px;
+    height: 100px;
+    position:absolute;
+    top: 812px;
+    left: 433px;
+    border-radius: 20px;
+    border: 1px solid rgb(153, 154, 157);
+    -webkit-transform: rotate(-30deg);
+    box-shadow: -1px 0px 5px 0px ;
+}
+.third{
+    background-color: rgb(190, 192, 196);
+    width: 10px;
+    height: 100px;
+    position:absolute;
+    top: 787px;
+    left: 467px;
+    border-radius: 20px;
+    border: 1px solid rgb(153, 154, 157);
+    -webkit-transform: rotate(-30deg);
+    box-shadow: -1px 0px 5px 0px ;
+}
+.fourth{
+    background-color: rgb(190, 192, 196);
+    width: 10px;
+    height: 94px;
+    position:absolute;
+    top: 775px;
+    left: 483px;
+    border-radius: 20px;
+    border: 1px solid rgb(153, 154, 157);
+    -webkit-transform: rotate(-30deg);
+    box-shadow: -1px 0px 5px 0px ;
+}
+.fifth{
+
+    background-color: rgb(190, 192, 196);
+    width: 10px;
+    height: 100px;
+    position:absolute;
+    top: 825px;
+    left: 415px;
+    border-radius: 20px;
+    border: 1px solid rgb(153, 154, 157);
+    -webkit-transform: rotate(-30deg);
+    box-shadow: -1px 0px 5px 0px ;
+}
+.sixth{
+    background-color: rgb(190, 192, 196);
+    width: 10px;
+    height: 95px;
+    position:absolute;
+    top: 838px;
+    left: 396px;
+    border-radius: 20px;
+    border: 1px solid rgb(153, 154, 157);
+    -webkit-transform: rotate(-30deg);
+    box-shadow: -1px 0px 5px 0px ;
+}
+/*Me voy a crear las 4 líneas oscuras de dentro del altavoz*/
+
+.speaker1{
+    background-color: rgb(1, 1, 1);
+    width: 2px;
+    height: 65px;
+    position:absolute;
+    top: 782px;
+    left: 478px;
+    border-radius: 30px;
+    box-shadow: 0px 3px 3px 0px ;
+    -webkit-transform: rotate(-30deg);
+}
+.speaker2{
+    background-color: rgb(1, 1, 1);
+    width: 2px;
+    height: 68px;
+    position:absolute;
+    top: 794px;
+    left: 461px;
+    border-radius: 30px;
+    box-shadow: 0px 3px 1px 0px;
+    -webkit-transform: rotate(-30deg);
+    box-shadow: 0px 3px 3px 0px;
+}
+.speaker3{
+    background-color: rgb(1, 1, 1);
+    width: 2px;
+    height: 68px;
+    position:absolute;
+    top: 808px;
+    left: 444px;
+    border-radius: 30px;
+    box-shadow: 0px 3px 3px 0px;
+    -webkit-transform: rotate(-30deg);
+}
+
+.speaker4{
+    background-color: rgb(1, 1, 1);
+    width: 2px;
+    height: 68px;
+    position:absolute;
+    top: 820px;
+    left: 427px;
+    border-radius: 30px;
+    box-shadow: 0px 3px 3px 0px;
+    -webkit-transform: rotate(-30deg);
+}
+.speaker5{
+    background-color: rgb(1, 1, 1);
+    width: 2px;
+    height: 68px;
+    position:absolute;
+    top: 832px;
+    left: 409px;
+    border-radius: 30px;
+    box-shadow: 0px 3px 3px 0px;
+    -webkit-transform: rotate(-30deg);
+}
+/*Voy a crear la última caja de la parte inferior de la GameBoy*/
+
+.Phones{
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(105, 105, 105, 0.28);
+    background-color: rgb(198, 200, 199, 0.863);
+    width: 85px;
+    height: 23px;
+    position: absolute;
+    top: 900px;
+    left: 210px;
+    border-radius: 20px;
+    border: 1px solid rgba(79, 77, 77, 0.06);
+    box-shadow: -0px 0px 3px 0px; 
+}
